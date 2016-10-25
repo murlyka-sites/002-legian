@@ -1,0 +1,137 @@
+.back-site
+	.back-site__title
+		| Вернуться на 
+		br
+		| zakaz-landing.ru
+script.
+	$(".back-site").click(function(){
+		var domain = "zakaz-landing.ru";
+
+		if(document.referrer != false) {
+			var ref = new URL(document.referrer);
+				
+			if(ref.hostname == domain || ref.hostname == "www." + domain) {
+				history.back();
+				return ;
+			}
+		}
+
+		document.location.href = "http://" + domain;		
+	});
+style.
+	body {
+		margin-bottom: 80px;
+	}
+
+	@media (min-width: 768px) {
+		body {
+			margin-bottom: 0;
+		}
+	}
+	.back-site {
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 10001;
+		height: 80px;
+		padding: 10px 0;
+		background-color: #fecd0f;
+		border-top: 10px solid white;
+		border-bottom: 10px solid white;
+		
+		box-shadow: 0 5px 20px rgba(0, 0, 0, 0.35);
+		color: #2f2f2f;
+		font-size: 15px;
+		font-weight: 700;
+		line-height: 20px;
+		text-align: center;
+		cursor: pointer;
+		animation: blink 1s infinite;
+	}
+
+	@media (min-width: 768px) {
+		.back-site {
+			left: auto;
+			right: 25px;
+			bottom: 50px;
+			width: 160px;
+			height: 160px;
+			padding: 50px 0;
+			border-radius: 50%;
+			border: 10px solid white;
+		}
+	}	
+
+	.back-site:hover {
+		background: #2f2f2f;
+		color: white;
+	}
+		
+	.back-site:before,
+	.back-site:after {
+		content: "";
+		position: absolute;
+	}
+
+	.back-site:before {
+		.i-back-site-left();
+		display: inline-block;
+		background-image: url(/sprite/back-site-left.png);
+		width: 18px;
+		height: 37px;
+		vertical-align: middle;
+		left: 20px;
+		top: 10px;
+	}
+
+	@media (min-width: 768px) {
+		.back-site:before {
+			.i-back-site-top();
+			display: inline-block;
+			background-image: url(/sprite/back-site-top.png);
+			width: 38px;
+			height: 18px;
+			vertical-align: middle;
+			top: 13px;
+			left: 50%;
+			margin-left: -18px;
+		}
+	}
+
+	.back-site:after {
+		.i-back-site-right();
+		display: inline-block;
+		background-image: url(/sprite/back-site-right.png);
+		width: 18px;
+		height: 37px;
+		vertical-align: middle;
+		right: 20px;
+		top: 10px;
+	}
+			
+	@media (min-width: 768px) {
+		.back-site:after {
+			.i-back-site-bottom();
+			display: inline-block;
+			background-image: url(/sprite/back-site-bottom.png);
+			width: 39px;
+			height: 18px;
+			top: auto;
+			bottom: 20px;
+			left: 50%;
+			margin-left: -18px;
+		}
+	}
+
+	@keyframes blink {
+		from {
+			background-color: #fecd0f;
+			color: #2f2f2f;
+		}
+
+		to {
+			background-color: #2f2f2f;
+			color: white;
+		}
+	}

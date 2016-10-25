@@ -1,0 +1,41 @@
+.hidden
+	.popup#call
+		h4.popup__title
+			| Заказать 
+			br
+			| обратный звонок
+		form#form-call(action="mail.php", method="post", onsubmit="yaCounter39507400.reachGoal('call')")
+			.form-group
+				input.form-control.input--name(type="text", placeholder="Имя", name="name", required)
+			.form-group
+				input.form-control.input--phone(type="text", placeholder="Телефон", name="phone", required)
+			.form-group
+				input.form-control.input--time(type="text", placeholder="Удобное время для звонка", name="time")
+			button.btn.btn-white.btn-block.popup__btn(type="submit")
+				| Заказать
+	.popup#mail
+		h4.popup__title
+			| Отправить 
+			br
+			| сообщение на E-MAIL
+		form#form-mail(action="mail.php", method="post", onsubmit="yaCounter39507400.reachGoal('mail')")
+			.form-group
+				input.form-control.input--name(type="text", placeholder="Имя", name="name", required)
+			.form-group
+				input.form-control.input--email(type="email", placeholder="Email", name="email", required)
+			.form-group
+				textarea.form-control.input--mail(placeholder="Ваш вопрос", name="msg")
+			button.btn.btn-white.btn-block.popup__btn(type="submit")
+				| Заказать
+	.popup#success
+		h5.popup__title
+			| Спасибо!
+			br
+			| Ждите звонка!
+iframe(src="", frameborder="0").open-site#site
+.back-site
+	.back-site__title
+		| Вернуться на 
+		br
+		| zakaz-landing.ru
+a.toUp#toTop

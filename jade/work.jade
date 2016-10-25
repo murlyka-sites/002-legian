@@ -1,0 +1,24 @@
+.work.dark#work
+	.container
+		.row
+			.col-xs-14
+				h2.work__title
+					| Примеры работ
+				.work__divider.divider.divider-yellow
+				p.work__slogan
+					| Чтобы 
+					| не ограничиваться 
+					| словами, крепим 
+					| примеры наших 
+					| разноплановых лэндингов: 
+		.row
+			.col-xs-14
+				.row
+					.visible-xs.visible-sm.work__slider
+						include work-items.jade
+
+				.clearfix.hidden-xs.hidden-sm
+					.work__items
+						include work-items.jade
+					a.work__all(href="#work")
+						| Показать все примеры

@@ -1,0 +1,6 @@
+{
+    "require": {
+        "ua-parser/uap-php": "^3.4",
+        "geoip/geoip": "~1.16"
+    }
+}
