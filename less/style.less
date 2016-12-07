@@ -1248,7 +1248,7 @@ h5 {
 .toUp {
 	position: fixed;
 	z-index: 9999;
-	bottom: 0;
+	bottom: 40px;
 	right: 0;
 	width: 48px;
 	height: 48px;
@@ -1257,6 +1257,10 @@ h5 {
 	cursor: pointer;
 	background-color: @yellow;
 	border-radius: 50%;
+	
+	@media (min-width: @screen-sm-min) {
+		bottom: 0;
+	}
 
 	&:hover {
 		opacity: 1;
